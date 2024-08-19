@@ -1,25 +1,29 @@
 variable "resource_group_name" {
-  default = "cmaz-945e234b-mod3-rg"
+  type        = string
+  description = "value for resource group name"
 }
 
 variable "location" {
-  default = "eastus"
+  type        = string
+  description = "value for location"
 }
 
 variable "virtual_network_name" {
-  default = "cmaz-945e234b-mod3-vnet"
+  type        = string
+  description = "value for virtual network name"
 }
 
 variable "tags" {
-  default = {
-    Creator = "ersin_mutlu@epam.com"
-  }
+  type        = map(string)
+  description = "value for tags"
 }
 
 variable "storage_account_name" {
-  default = "cmaz945e234bmod3sa"
+  type        = string
+  description = "value for storage account name"
 }
 
 variable "subnet_names" {
-  default = ["frontend", "backend"]
+  type        = list(string)
+  description = "value for subnet names"
 }

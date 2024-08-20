@@ -23,7 +23,7 @@ resource "azurerm_virtual_network" "vnet" {
   depends_on          = [azurerm_resource_group.rg]
 }
 
-resource "azurerm_subnet" "frontend" {
+resource "azurerm_subnet" "fe" {
   name                 = var.subnet_names[0]
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet.name
@@ -31,7 +31,7 @@ resource "azurerm_subnet" "frontend" {
   depends_on           = [azurerm_virtual_network.vnet]
 }
 
-resource "azurerm_subnet" "backend" {
+resource "azurerm_subnet" "be" {
   name                 = var.subnet_names[1]
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet.name
